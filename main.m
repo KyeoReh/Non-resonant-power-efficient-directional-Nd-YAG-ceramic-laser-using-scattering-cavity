@@ -49,7 +49,7 @@ asRatio_ex = mu_a_ex/remu_s_ex;                         % ratio btw absorption a
 asRatio_em = mu_a_em/remu_s_em;                         % ratio btw absorption and reduced scattering coefficient of emission light
 
 Refl_oc = FresnelMeanRefl(1/RI_fiber);                  % the outcouping reflectivity estimated the fresnel coefficients.
-Refl_NdYAG_specular = FresnelMeanRefl(1/RI_NdYAG);      % specular relection from the wall surface due to the RI mismatch)
+Refl_NdYAG_specular = FresnelMeanRefl(1/effRI);      % specular relection from the wall surface due to the RI mismatch)
 effPenDepth = (1-Refl_NdYAG_specular)*(1/remu_s_em);    % m, Eq.(S10), effective wall penetration depth
 tau_wall = 3/2*effRI/c * (1/remu_s_em)*(1+asRatio_em)/(1+sqrt(3*asRatio_em*(1+asRatio_em))); %s, Eq.(S10), mean dwell time for single reflection
 % Patterson, M.S., B. Chance, and B.C. Wilson, Time resolved reflectance and transmittance for the noninvasive measurement of tissue optical properties. Applied Optics, 1989. 28(12): p. 2331-2336.
